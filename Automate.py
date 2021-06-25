@@ -62,7 +62,6 @@ while(True):
     mask1 = cv2.bitwise_not(mask)
     th = cv2.getTrackbarPos("Thresh","TrackYourHand")
     _,thresh = cv2.threshold(mask1,th,255,cv2.THRESH_BINARY)
-
     # dilation = cv2.dilate(thresh,(3,3),iterations=6)
     erosion = cv2.erode(thresh,(3,3),iterations=6)
     # finding contours
@@ -129,6 +128,7 @@ while(True):
     cv2.imshow("filter",fltr)
     # cv2.imshow("mask1",mask1)
     # cv2.imshow("dilation",dilation)
+
     # cv2.imshow("thresh",thresh)
     cv2.imshow("erosion",erosion)
 
